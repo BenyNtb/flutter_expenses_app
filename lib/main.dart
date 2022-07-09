@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/widgets/transaction_list.dart';
 import './widgets/new_transaction.dart';
 
 import './widgets/transaction_list.dart';
@@ -11,7 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Expense App',
+      title: 'Expenses App',
+      theme: ThemeData(
+        primarySwatch: Colors.grey,
+        accentColor: Colors.black87,
+        
+      ),
       home: MyHomePage(),
     );
   }
@@ -68,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Expense App'),
+        title: Text('Expenses App'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
