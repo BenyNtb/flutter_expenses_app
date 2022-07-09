@@ -7,40 +7,40 @@ class NewTransaction extends StatelessWidget {
 
   NewTransaction(this.addTx);
 
-  @override 
-  Widget build (BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
     return Card(
-              elevation: 5,
-              child: Container(
-                padding: EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Title'),
-                      controller: titleController,
-                      // onChanged: (value) {
-                      //   titleInput = value;
-                      // },
-                    ),
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Amount'),
-                      controller: amountController,
-                      // onChanged: (value) => amountInput = value,
-                    ),
-                    TextButton(
-                      child: Text(
-                        'Add Transaction',
-                        style: TextStyle(color: Colors.purple),
-                      ),
-                      onPressed: () {
-                        addTx(titleController.text, double.parse(amountController.text)
-                        );
-                      },
-                    )
-                  ],
-                ),
+      elevation: 5,
+      child: Container(
+        padding: EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            TextField(
+              decoration: InputDecoration(labelText: 'Title'),
+              controller: titleController,
+              // onChanged: (value) {
+              //   titleInput = value;
+              // },
+            ),
+            TextField(
+              decoration: InputDecoration(labelText: 'Amount'),
+              controller: amountController,
+              // onChanged: (value) => amountInput = value,
+            ),
+            TextButton(
+              child: Text(
+                'Add Transaction',
+                style: TextStyle(color: Color.fromARGB(255, 176, 39, 39)),
               ),
-              );
+              onPressed: () {
+                addTx(
+                    titleController.text, double.parse(amountController.text));
+              },
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
